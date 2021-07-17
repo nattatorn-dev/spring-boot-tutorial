@@ -1,5 +1,7 @@
 package com.dailycodebuffer.springboottutorial.service;
 
+import java.util.List;
+
 import com.dailycodebuffer.springboottutorial.entity.Department;
 import com.dailycodebuffer.springboottutorial.repository.DepartmentRepository;
 
@@ -16,5 +18,9 @@ public class DepartmentServiceImpl implements DepartmentService {
   public Department saveDepartment(Department department) {
     return departmentRepository.save(department);
   }
-    
+
+  @Override
+  public List<Department> fetchDepartmentList() {
+    return departmentRepository.findAll();
+  }
 }
